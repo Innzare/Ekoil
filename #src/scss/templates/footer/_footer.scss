@@ -1,0 +1,92 @@
+footer {
+   background-color: #424242;
+   padding: 50px 0;
+   @include tablets {
+      padding: 20px 0;
+   }
+   @include phones {
+      margin-top: 200px;
+   }
+   .container {
+   }
+   .footer {
+      @include flexbox;
+      align-items: center;
+      justify-content: space-between;
+      @include tablets {
+         flex-direction: column;
+         align-items: flex-start;
+      }
+   }
+   .footer-logo {
+      margin-right: 100px;
+      @include laptop {
+         margin-right: 50px;
+      }
+      @include tablets {
+         margin-right: 0;
+         margin-bottom: 20px;
+         padding-left: 50px;
+      }
+      img {
+         width: 300px;
+         @include laptop {
+            width: 200px;
+         }
+      }
+   }
+   .footer-nav {
+      @include flexbox;
+      flex: 1 1 100%;
+      @include tablets {
+         width: 100%;
+         justify-content: space-around;
+         flex-wrap: wrap;
+      }
+      @include phones {
+         flex-direction: column;
+         padding-left: 50px;
+      }
+   }
+   .footer-nav__item {
+      // margin-right: 100px;
+      flex: 0 0 33.3%;
+      @include tablets {
+         flex: none;
+      }
+      @include phones {
+         margin-bottom: 30px;
+      }
+      &:last-child {
+         margin-right: 0;
+      }
+      ul {
+         li {
+            a {
+               color: #ffffff;
+               font-size: 16px;
+               transition: all 0.3s;
+               @include tablets {
+                  font-size: 14px;
+               }
+               &:hover {
+                  color: #aca9a9;
+                  border-bottom: 1px solid #aca9a9;
+               }
+            }
+            margin-bottom: 10px;
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
+      }
+   }
+   .footer-nav-title {
+      color: #888;
+      font-size: 16px;
+      margin-bottom: 10px;
+      @include tablets {
+         font-size: 14px;
+      }
+   }
+}

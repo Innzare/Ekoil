@@ -1,0 +1,220 @@
+// Миксины ===========================================================================
+@mixin flexbox() {
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+}
+
+//Медиа-запросы
+//Миксин, который сохранит вам очень много времени! Вы можете использовать значения только в пикселях, но у нас есть также настройки контрольных точек по умолчанию, которые также ////работают, другие же – экономят время, сохраняя свои контрольные точки последовательно.
+
+$breakpoints: (
+   "phone": 400px,
+   "phone-wide": 480px,
+   "phablet": 560px,
+   "tablet-small": 640px,
+   "tablet": 768px,
+   "tablet-wide": 1024px,
+   "desktop": 1248px,
+   "desktop-wide": 1440px,
+);
+
+@mixin mq($width, $type: min) {
+   @if map_has_key($breakpoints, $width) {
+      $width: map_get($breakpoints, $width);
+      @if $type == max {
+         $width: $width - 1px;
+      }
+      @media only screen and (#{$type}-width: $width) {
+         @content;
+      }
+   }
+}
+//Пример ниже показывает увеличение внутренних отступов и размера шрифта, когда вьюпорт становится больше 1024px.
+
+// .site-header {
+//   padding: 2rem;
+//   font-size: 1.8rem;
+//   @include mq('tablet-wide') {
+//    padding-top: 4rem;
+//    font-size: 2.4rem;
+//   }
+// }
+
+//Стили шрифта =======================================================================
+//Переложите все проблемы установки шрифтов на этот миксин. (Предполагается, что вы уже установили шрифт), укажите резервные шрифты один раз и больше не беспокойтесь об этом.
+
+@mixin font-source-sans($size: false, $colour: false, $weight: false, $lh: false) {
+   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+   @if $size {
+      font-size: $size;
+   }
+   @if $colour {
+      color: $colour;
+   }
+   @if $weight {
+      font-weight: $weight;
+   }
+   @if $lh {
+      line-height: $lh;
+   }
+}
+
+// Шрифт по умолчанию=================================================================
+$fontfamily: "Montserrat";
+.wrapper {
+   font-family: $fontfamily;
+}
+
+// Переменные=========================================================================
+$mw: 1024px;
+$md1: 768px;
+$md2: 425px;
+// $md3: ;
+// $md4: ;
+
+// mixins популярных брекпоинтов =====================================================
+@mixin desktop {
+   @media screen and (max-width: 1024px) {
+      @content;
+   }
+}
+@mixin laptop {
+   @media screen and (max-width: $mw) {
+      @content;
+   }
+}
+@mixin tablets {
+   @media screen and (max-width: $md1) {
+      @content;
+   }
+}
+@mixin phones {
+   @media screen and (max-width: $md2) {
+      @content;
+   }
+}
+
+// $color: ;
+
+// Общий ограничивающий контейнер=====================================================
+.container {
+   max-width: 1250px;
+   width: 97%;
+   margin: 0 auto;
+   @include desktop {
+   }
+   @include tablets {
+   }
+}
+
+.header-menu__icon,
+.header-menu {
+   display: none;
+}
+
+// // Стили для бургер меню==============================================================
+@media (max-width: $md1) {
+   .header-menu__icon {
+      display: block;
+      position: absolute;
+      top: 30px;
+      right: 10px;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+      z-index: 1111115;
+      @include tablets {
+         top: 25px;
+         right: 25px;
+      }
+      @include phones {
+         top: 20px;
+         right: 20px;
+      }
+      span {
+         transition: all 0.3s ease 0s;
+         top: 8px;
+         left: 0;
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background-color: #ffffff;
+         &:first-child {
+            top: 0px;
+         }
+         &:last-child {
+            top: auto;
+            bottom: 0;
+         }
+      }
+      &.active {
+         span {
+            transform: scale(0);
+            &:first-child {
+               transform: rotate(-45deg);
+               top: 8px;
+            }
+            &:last-child {
+               transform: rotate(45deg);
+               bottom: 8px;
+            }
+         }
+      }
+   }
+   .header-menu {
+      display: block;
+      position: fixed;
+      width: 40%;
+      height: 100%;
+      overflow: auto;
+      right: -120%;
+      top: 0;
+      z-index: 11110;
+      background-color: #ffffff;
+      padding: 65px 10px 0px 10px;
+      transition: all 0.3s ease 0s;
+      @include phones {
+         width: 60%;
+      }
+      &.active {
+         right: 0;
+         background-color: #424242;
+         opacity: 0.958;
+         // filter: blur(1px);
+      }
+   }
+}
+
+// // Стили для кнопок ==================================================================
+.btn {
+   width: 174px;
+   height: 54px;
+   border-radius: 4px;
+   background-color: #ff8b00;
+   font-size: 14.5px;
+   font-weight: 400;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: 1.1;
+   letter-spacing: normal;
+   text-align: center;
+   color: #ffffff;
+   text-transform: uppercase;
+   transition: box-shadow 0.2s;
+   &:hover {
+   }
+   &:active {
+   }
+   @include desktop {
+      width: 154px;
+      height: 44px;
+      font-size: 12.5px;
+   }
+}
+
+// // Стили для инпутов =================================================================
+// .input {
+// }

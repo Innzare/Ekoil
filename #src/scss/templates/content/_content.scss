@@ -1,0 +1,644 @@
+.first-block {
+   background-image: url("./../img/background.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   position: relative;
+   padding: 50px 0 70px 0;
+   // height: 91.3vh;
+   @include tablets {
+      padding-bottom: 30px;
+   }
+   @include phones {
+      padding-top: 30px;
+   }
+   .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      opacity: 0.7;
+   }
+   .first-block-slider {
+      display: flex;
+   }
+   .text-block {
+      z-index: 1;
+      position: relative;
+      font-family: $fontfamily;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 30px;
+   }
+   .text-block__title {
+      color: #ffffff;
+      font-size: 54px;
+      font-weight: 700;
+      @include laptop {
+         font-size: 34px;
+      }
+      @include tablets {
+         text-align: center;
+      }
+      @include phones {
+         font-size: 26px;
+      }
+   }
+   .text-block__text {
+      margin-top: 40px;
+      font-size: 20px;
+      text-align: left;
+      line-height: 30px;
+      float: left;
+      display: flex;
+      align-items: center;
+      @include laptop {
+         font-size: 14px;
+         line-height: 20px;
+         text-align: justify;
+      }
+      @include tablets {
+         display: flex;
+         flex-direction: column;
+      }
+      @include phones {
+         text-align: left;
+         margin-top: 20px;
+      }
+      img {
+         float: right;
+         margin-left: 30px;
+         width: 450px;
+         @include laptop {
+            width: 250px;
+         }
+         @include tablets {
+            display: none;
+            margin-top: 20px;
+         }
+      }
+   }
+   @keyframes glowing {
+      0% {
+         background-color: #ed7a00;
+         box-shadow: 0 0 5px #ed7a00;
+      }
+      50% {
+         background-color: #ee983d;
+         box-shadow: 0 0 30px #ee983d;
+      }
+      100% {
+         background-color: #ed7a00;
+         box-shadow: 0 0 5px #ed7a00;
+      }
+   }
+   .select-oil-btn {
+      display: flex;
+      position: relative;
+      z-index: 11;
+      margin-top: 70px;
+      margin-left: 30px;
+      @include tablets {
+         margin-top: 30px;
+         justify-content: center;
+      }
+      @include phones {
+         margin-left: 0;
+      }
+      button {
+         width: 250px;
+         height: 50px;
+         background-color: #ed7a00;
+         font-size: 18px;
+         color: #ffffff;
+         animation: glowing 2000ms infinite;
+         transition: all 0.3s;
+         text-transform: uppercase;
+         &:hover {
+            animation: none;
+            transform: scale(1.09);
+            box-shadow: 0 0 20px #ee983d;
+            background-color: #ee983d;
+         }
+         &:active {
+            transform: scale(0.99);
+         }
+         @include laptop {
+            width: 170px;
+            font-size: 14px;
+         }
+         @include phones {
+            height: 35px;
+         }
+      }
+   }
+
+   .scroll-bottom {
+      cursor: pointer;
+      position: relative;
+      z-index: 11;
+      width: 24px;
+      height: 24px;
+      margin: 0 auto;
+      .chevron {
+         position: absolute;
+         width: 28px;
+         height: 8px;
+         opacity: 0;
+         transform: scale3d(0.5, 0.5, 0.5);
+         animation: move 3s ease-out infinite;
+      }
+
+      .chevron:first-child {
+         animation: move 3s ease-out 1s infinite;
+      }
+
+      .chevron:nth-child(2) {
+         animation: move 3s ease-out 2s infinite;
+      }
+
+      .chevron:before,
+      .chevron:after {
+         content: " ";
+         position: absolute;
+         top: 0;
+         height: 100%;
+         width: 51%;
+         background: #fff;
+      }
+
+      .chevron:before {
+         left: 0;
+         transform: skew(0deg, 30deg);
+      }
+
+      .chevron:after {
+         right: 0;
+         width: 50%;
+         transform: skew(0deg, -30deg);
+      }
+
+      @keyframes move {
+         25% {
+            opacity: 1;
+         }
+         33% {
+            opacity: 1;
+            transform: translateY(30px);
+         }
+         67% {
+            opacity: 1;
+            transform: translateY(40px);
+         }
+         100% {
+            opacity: 0;
+            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+         }
+      }
+
+      .text {
+         display: block;
+         margin-top: 125px;
+         margin-left: -43px;
+         font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+         font-size: 12px;
+         color: #fff;
+         text-transform: uppercase;
+         white-space: nowrap;
+         opacity: 0.25;
+         animation: pulse 2s linear alternate infinite;
+      }
+
+      @keyframes pulse {
+         to {
+            opacity: 1;
+         }
+      }
+   }
+}
+
+.guarant {
+   margin-top: 80px;
+   @include tablets {
+      margin-top: 50px;
+   }
+   @include phones {
+      margin-top: 30px;
+   }
+   .guarant__title {
+      color: #a9a9a9;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      letter-spacing: 5px;
+      @include tablets {
+         margin-bottom: 20px;
+      }
+      @include phones {
+         font-size: 16px;
+         margin-bottom: 15px;
+      }
+   }
+   .guarant__subtitle {
+      color: #444444;
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      @include laptop {
+         font-size: 32px;
+      }
+      @include tablets {
+         font-size: 26px;
+         margin-bottom: 20px;
+      }
+      @include phones {
+         font-size: 20px;
+         margin-bottom: 15px;
+      }
+   }
+   .guarant__text {
+      max-width: 60%;
+      text-align: justify;
+      margin-bottom: 30px;
+      line-height: 20px;
+      font-size: 16px;
+      @include laptop {
+         max-width: 100%;
+      }
+      @include tablets {
+         font-size: 14px;
+      }
+      @include phones {
+         text-align: left;
+      }
+      p {
+         margin-top: 20px;
+
+         a {
+            font-size: 16px;
+            color: #9c8d8d;
+            border-bottom: 2px solid #9c8d8d;
+            transition: all 0.3s;
+            @include phones {
+               font-size: 14px;
+            }
+            &:hover {
+               color: #444444;
+               border-bottom: 2px solid #444444;
+            }
+         }
+      }
+   }
+   .guarant__slider {
+      .slick-slide {
+         @include phones {
+            display: flex;
+            justify-content: center;
+         }
+      }
+      .slick-dots {
+         margin-top: 20px;
+         display: flex;
+         justify-content: center;
+         li {
+            margin-right: 10px;
+            &.slick-active {
+               button {
+                  background-color: grey;
+               }
+            }
+         }
+         button {
+            font-size: 0;
+            width: 10px;
+            height: 10px;
+            border: 1px solid grey;
+            border-radius: 100%;
+            &:hover {
+               box-shadow: 0 0 5px 1px grey;
+            }
+         }
+      }
+   }
+   .guarant__slide {
+      img {
+         width: 200px;
+         @include tablets {
+            width: 130px;
+         }
+         @include phones {
+            width: 300px;
+         }
+      }
+   }
+}
+
+.catalog {
+   margin-top: 100px;
+   @include tablets {
+      margin-top: 50px;
+   }
+   .catalog__title {
+      color: #a9a9a9;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      letter-spacing: 5px;
+      @include phones {
+         font-size: 16px;
+         margin-bottom: 20px;
+      }
+   }
+   .catalog__subtitle {
+      color: #444444;
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      @include laptop {
+         font-size: 32px;
+      }
+      @include tablets {
+         font-size: 26px;
+      }
+      @include phones {
+         font-size: 20px;
+         margin-bottom: 20px;
+      }
+   }
+   .catalog-container {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      @include tablets {
+         margin-top: 20px;
+      }
+   }
+   .catalog__item {
+      flex: 0 0 50%;
+      display: flex;
+      margin-bottom: 40px;
+      padding: 10px;
+      transition: 0.4s;
+      cursor: pointer;
+      @include tablets {
+         flex: 0 0 100%;
+      }
+      @include phones {
+         flex-direction: column;
+         align-items: center;
+      }
+      &:hover {
+         background-color: rgb(223, 222, 222);
+      }
+      .catalog-item__img {
+         img {
+            width: 200px;
+            @include laptop {
+               width: 150px;
+            }
+            @include phones {
+               margin-bottom: 20px;
+            }
+         }
+      }
+      .catalog-item__text {
+         @include flexbox;
+         flex-direction: column;
+         .catalog-item__title {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            @include laptop {
+               font-size: 18px;
+               margin-bottom: 10px;
+            }
+            @include phones {
+               font-size: 16px;
+            }
+         }
+         .catalog-item__subtitle {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            flex: 1 1 auto;
+            @include laptop {
+               font-size: 13px;
+               margin-bottom: 20px;
+               line-height: 1.3;
+            }
+         }
+         .catalog-item__price {
+            color: #333;
+            font-size: 26px;
+            // font-weight: 700;
+         }
+         .catalog-item__button {
+         }
+      }
+   }
+}
+
+.feedback {
+   margin-top: 100px;
+   padding-left: 100px;
+   @include laptop {
+      margin-top: 50px;
+      padding-left: 50px;
+   }
+   @include tablets {
+      margin-top: 20px;
+   }
+   @include phones {
+      padding-left: 30px;
+   }
+   .feedback-container {
+      display: flex;
+   }
+   .feedback-item {
+      flex: 0 0 50%;
+      @include laptop {
+         flex: 0 0 100%;
+      }
+   }
+   .feedback-form {
+      font-size: 16px;
+   }
+   .feedback__title {
+      color: #a9a9a9;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      letter-spacing: 5px;
+      @include tablets {
+         margin-bottom: 20px;
+      }
+      @include phones {
+         font-size: 16px;
+      }
+   }
+   .feedback__subtitle {
+      color: #444444;
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      @include laptop {
+         font-size: 32px;
+      }
+      @include tablets {
+         font-size: 26px;
+         margin-bottom: 20px;
+      }
+      @include phones {
+         font-size: 20px;
+      }
+   }
+   .feedback__text {
+      color: #333;
+      font-size: 16px;
+      margin-bottom: 40px;
+   }
+   .feedback-form__area {
+      margin-bottom: 30px;
+      p {
+         margin-bottom: 20px;
+      }
+      input {
+         padding: 10px 0;
+         border-bottom: 1px solid #000;
+         width: 90%;
+         &::-webkit-input-placeholder {
+            font-size: 16px;
+            color: rgb(175, 175, 175);
+         }
+         &:-webkit-input-placeholder {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            font-size: 16px;
+         }
+         &:focus::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+         }
+      }
+   }
+   .feedback-name {
+   }
+   .feedback-phone {
+   }
+   .feedback-question {
+   }
+   .feedback-submitBtn {
+      margin-top: 50px;
+      input {
+         width: 200px;
+         background-color: #ed7a00;
+         border-bottom: none;
+         width: 250px;
+         height: 50px;
+         background-color: #ed7a00;
+         font-size: 18px;
+         color: #ffffff;
+         // animation: glowing 2000ms infinite;
+         transition: all 0.3s;
+         text-transform: uppercase;
+         cursor: pointer;
+         @include tablets {
+            width: 150px;
+            font-size: 16px;
+         }
+         &:hover {
+            animation: none;
+            transform: scale(1.09);
+            box-shadow: 0 0 20px #ee983d;
+            background-color: #ee983d;
+         }
+         &:active {
+            transform: scale(0.99);
+         }
+      }
+   }
+   .feedback-img {
+      img {
+         width: 95%;
+      }
+      @include laptop {
+         display: none;
+      }
+   }
+}
+
+.map {
+   margin-top: 100px;
+   position: relative;
+   height: 500px;
+   font-size: 18px;
+   letter-spacing: 2px;
+   @include phones {
+      margin-top: 50px;
+      height: 350px;
+   }
+   .map-contacts {
+      box-shadow: 0 0 10px -3px #ccc, 0 0 10px -3px #e2e2e2, 1px 1px 0 0 #e2e2e2, -1px -1px 0 0 #e2e2e2,
+         1px -1px 0 0 #e2e2e2, -1px 1px 0 0 #e2e2e2;
+      position: absolute;
+      top: calc(50% - 100px);
+      left: 10%;
+      z-index: 111111;
+      opacity: 0.8;
+      background-color: #fff;
+
+      @include phones {
+         display: block;
+         position: static;
+      }
+      .map-contacts__text {
+         padding: 30px;
+         @include tablets {
+            padding: 30px 15px;
+         }
+      }
+      .map-contacts__title {
+         color: #a9a9a9;
+         font-size: 18px;
+         font-weight: bold;
+         text-transform: uppercase;
+         margin-bottom: 10px;
+         letter-spacing: 5px;
+         @include tablets {
+            font-size: 16px;
+         }
+      }
+      .map-contacts__subtitle {
+         color: #444444;
+         font-size: 24px;
+         font-weight: bold;
+         text-transform: uppercase;
+         margin-bottom: 20px;
+         @include laptop {
+            font-size: 18px;
+         }
+         @include tablets {
+            font-size: 16px;
+         }
+      }
+      .map-adress {
+         margin-bottom: 10px;
+      }
+      .map-email {
+         margin-bottom: 10px;
+      }
+      .map-phone {
+      }
+   }
+}
