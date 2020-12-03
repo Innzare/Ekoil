@@ -1,27 +1,35 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "ProximaNova";
+  font-family: "Montserrat";
   font-display: swap;
-  src: url("../fonts/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova-Regular.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "ProximaNova";
+  font-family: "Montserrat";
   font-display: swap;
-  src: url("../fonts/ProximaNova-Bold.woff") format("woff"), url("../fonts/ProximaNova-Bold.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "ProximaNova";
+  font-family: "Roboto";
   font-display: swap;
-  src: url("../fonts/ProximaNova-Semibold.woff") format("woff"), url("../fonts/ProximaNova-Semibold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: italic;
+  src: url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
 }
 
 /*Обнуление*/
@@ -124,6 +132,7 @@ h6 {
   max-width: 1250px;
   width: 97%;
   margin: 0 auto;
+  font-family: "Montserrat";
 }
 
 .header-menu__icon,
@@ -207,6 +216,10 @@ header ul a:last-child {
 
 header ul a:hover {
   background-color: #1d1d1d;
+}
+
+* {
+  font-family: "Montserrat";
 }
 
 .first-block {

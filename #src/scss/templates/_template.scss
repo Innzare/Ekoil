@@ -104,6 +104,7 @@ $md2: 425px;
    max-width: 1250px;
    width: 97%;
    margin: 0 auto;
+   font-family: "Montserrat";
    @include desktop {
    }
    @include tablets {
@@ -204,10 +205,10 @@ $md2: 425px;
    color: #ffffff;
    text-transform: uppercase;
    transition: box-shadow 0.2s;
-   &:hover {
-   }
-   &:active {
-   }
+   // &:hover {
+   // }
+   // &:active {
+   // }
    @include desktop {
       width: 154px;
       height: 44px;

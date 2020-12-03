@@ -163,26 +163,26 @@ function fonts(params) {
 }
 
 // Функция для подкл шрифтов к файлу стилей
-function fontsStyle(params) {
+// function fontsStyle(params) {
 
-   let file_content = fs.readFileSync(source_folder + '/scss/templates/_fonts.scss');
-   if (file_content == '') {
-      fs.writeFile(source_folder + '/scss/templates/_fonts.scss', '', cb);
-      return fs.readdir(path.build.fonts, function (err, items) {
-         if (items) {
-            let c_fontname;
-            for (var i = 0; i < items.length; i++) {
-               let fontname = items[i].split('.');
-               fontname = fontname[0];
-               if (c_fontname != fontname) {
-                  fs.appendFile(source_folder + '/scss/templates/_fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
-               }
-               c_fontname = fontname;
-            }
-         }
-      });
-   }
-}
+//    let file_content = fs.readFileSync(source_folder + '/scss/templates/_fonts.scss');
+//    if (file_content == '') {
+//       fs.writeFile(source_folder + '/scss/templates/_fonts.scss', '', cb);
+//       return fs.readdir(path.build.fonts, function (err, items) {
+//          if (items) {
+//             let c_fontname;
+//             for (var i = 0; i < items.length; i++) {
+//                let fontname = items[i].split('.');
+//                fontname = fontname[0];
+//                if (c_fontname != fontname) {
+//                   fs.appendFile(source_folder + '/scss/templates/_fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+//                }
+//                c_fontname = fontname;
+//             }
+//          }
+//       });
+//    }
+// }
 
 // Функция колбэк для корректного подкл шрифтов к файлу стилей
 function cb() { }
@@ -197,12 +197,12 @@ gulp.task('otf2ttf', function () {
 });
 
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle); // Функция series вызывает последовательно несколько задач
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts) /*fontsStyle*/); // Функция series вызывает последовательно несколько задач
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 
 // созданные ранее функции это просто функции, чтобы сделать из них задачи (зарегистрировать) для gulp нужен объект exports
-exports.fontsStyle = fontsStyle;
+// exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
 exports.js = js;

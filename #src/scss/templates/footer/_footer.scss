@@ -7,8 +7,6 @@ footer {
    @include phones {
       margin-top: 200px;
    }
-   .container {
-   }
    .footer {
       @include flexbox;
       align-items: center;
