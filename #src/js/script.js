@@ -1,5 +1,6 @@
 @@include('./_responsive.js')
-
+@@include('./_catalog.js')
+ScrollReveal().reveal('.htmlclass', { delay: 400 })
 $('.first-block-slider').slick({
    arrows: false,
    autoplay: true,
