@@ -383,8 +383,12 @@
 
 .catalog {
    margin-top: 100px;
+   margin-bottom: 80px;
    @include tablets {
       margin-top: 50px;
+   }
+   @include phones {
+      margin-bottom: 40px;
    }
    .catalog__title {
       color: #a9a9a9;

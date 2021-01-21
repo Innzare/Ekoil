@@ -603,6 +603,7 @@ header ul a:hover {
 
 .catalog {
   margin-top: 100px;
+  margin-bottom: 80px;
 }
 
 .catalog .catalog__title {
@@ -2104,6 +2105,10 @@ footer .footer-nav-title {
 
   .guarant .guarant__slide img {
     width: 300px;
+  }
+
+  .catalog {
+    margin-bottom: 40px;
   }
 
   .catalog .catalog__title {
