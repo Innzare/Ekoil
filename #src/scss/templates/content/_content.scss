@@ -13,7 +13,10 @@
       padding-bottom: 30px;
    }
    @include phones {
-      padding-top: 30px;
+      padding-top: 80px;
+      background-size: cover;
+      z-index: -1;
+      margin-top: -53px;
    }
    .overlay {
       position: absolute;

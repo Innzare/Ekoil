@@ -2030,8 +2030,15 @@ footer .footer-nav-title {
     margin-left: 10px;
   }
 
+  .main-page header {
+    background-color: transparent;
+  }
+
   .first-block {
-    padding-top: 30px;
+    padding-top: 80px;
+    background-size: cover;
+    z-index: -1;
+    margin-top: -53px;
   }
 
   .first-block .text-block__title {

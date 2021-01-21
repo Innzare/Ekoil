@@ -51,3 +51,15 @@ header {
       }
    }
 }
+.main-page {
+   header {
+      @include phones {
+         background-color: transparent;
+      }
+      // .logo{
+      //    @include phones{
+      //       display: none;
+      //    }
+      // }
+   }
+}
