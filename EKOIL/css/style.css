@@ -335,7 +335,6 @@ header ul a:hover {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  z-index: 11;
   margin-top: 70px;
   margin-left: 30px;
 }
