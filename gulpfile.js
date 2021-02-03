@@ -49,6 +49,7 @@ let { src, dest } = require('gulp'), // функция src обращается 
    ttf2woff = require('gulp-ttf2woff'),
    ttf2woff2 = require('gulp-ttf2woff2'),
    fonter = require('gulp-fonter');
+   rename = require("gulp-rename");
 
 
 //Функция для работы brovsersync автообновление браузера
@@ -67,6 +68,9 @@ function html() {
    return src(path.src.html) // чтобы стрим работал его надо вернуть
       .pipe(fileInclude())
       .pipe(webphtml())
+      .pipe(rename(function (path) {
+         path.extname = ".php";
+       }))
       .pipe(dest(path.build.html))    //pipe - функция внутри который мы пишем те или иные команды для gulp
       .pipe(browsersync.stream());
 }

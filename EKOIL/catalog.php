@@ -13,7 +13,40 @@
 
    <div class="catalog-page">
 
-      @@include('./scss/templates/header/_header.html')
+      <header>
+   <div class="container container--main">
+      <div class="logo">
+         <a href="./index.php">
+            <picture><source srcset="./img/logo.webp" type="image/webp"><img src="./img/logo.png" alt=""></picture>
+         </a>
+      </div>
+      <nav>
+         <ul class="header-menu-nav">
+            <a href="./index.php">
+               <li>Главная</li>
+            </a>
+            <a href="./production.php">
+               <li>Каталог</li>
+            </a>
+            <a href="./about.php">
+               <li>О компании</li>
+            </a>
+            <a href="./sale-points.php">
+               <li>Точки продаж</li>
+            </a>
+            <a href="./contacts.php">
+               <li>Контакты</li>
+            </a>
+         </ul>
+      </nav>
+      <div class="header-menu__icon">
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+      <div class="header-menu"></div>
+   </div>
+</header>
 
       <div class="catalog-wrapper">
          <div class="container">
@@ -36,7 +69,7 @@
                
                   <div class="catalog-item oil-type">
                      <div class="catalog-item__img">
-                        <img src="./img/oil/1.png" alt="">
+                        <picture><source srcset="./img/oil/1.webp" type="image/webp"><img src="./img/oil/1.png" alt=""></picture>
                      </div>
                      <div class="catalog-item__text">
                         <div class="catalog-item__title">ASURA 5W-30 GF-5</div>
@@ -54,7 +87,7 @@
                   </div>
                   <div class="catalog-item oil-type">
                      <div class="catalog-item__img">
-                        <img src="./img/oil/1.png" alt="">
+                        <picture><source srcset="./img/oil/1.webp" type="image/webp"><img src="./img/oil/1.png" alt=""></picture>
                      </div>
                      <div class="catalog-item__text">
                         <div class="catalog-item__title">ASURA 5W-30 GF-5</div>
@@ -72,7 +105,7 @@
                   </div>
                   <div class="catalog-item oil-species">
                      <div class="catalog-item__img">
-                        <img src="./img/oil/1.png" alt="">
+                        <picture><source srcset="./img/oil/1.webp" type="image/webp"><img src="./img/oil/1.png" alt=""></picture>
                      </div>
                      <div class="catalog-item__text">
                         <div class="catalog-item__title">ASURA 56W-302 QW-5</div>
@@ -90,7 +123,7 @@
                   </div>
                   <div class="catalog-item oil-species">
                      <div class="catalog-item__img">
-                        <img src="./img/oil/1.png" alt="">
+                        <picture><source srcset="./img/oil/1.webp" type="image/webp"><img src="./img/oil/1.png" alt=""></picture>
                      </div>
                      <div class="catalog-item__text">
                         <div class="catalog-item__title">ASURA-NEW 51W-38 GF-5</div>
@@ -108,7 +141,7 @@
                   </div>
                   <div class="catalog-item oil-purpose">
                      <div class="catalog-item__img">
-                        <img src="./img/oil/1.png" alt="">
+                        <picture><source srcset="./img/oil/1.webp" type="image/webp"><img src="./img/oil/1.png" alt=""></picture>
                      </div>
                      <div class="catalog-item__text">
                         <div class="catalog-item__title">ASURA 5W-30 GF-5</div>
@@ -126,7 +159,7 @@
                   </div>
                   <div class="catalog-item oil-purpose">
                      <div class="catalog-item__img">
-                        <img src="./img/oil/1.png" alt="">
+                        <picture><source srcset="./img/oil/1.webp" type="image/webp"><img src="./img/oil/1.png" alt=""></picture>
                      </div>
                      <div class="catalog-item__text">
                         <div class="catalog-item__title">ASURA 5W-30 GF-5</div>
@@ -144,7 +177,7 @@
                   </div>
                   <div class="catalog-item oil-season">
                      <div class="catalog-item__img">
-                        <img src="./img/oil/1.png" alt="">
+                        <picture><source srcset="./img/oil/1.webp" type="image/webp"><img src="./img/oil/1.png" alt=""></picture>
                      </div>
                      <div class="catalog-item__text">
                         <div class="catalog-item__title">ASURA 5W-30 GF-5</div>
@@ -162,7 +195,7 @@
                   </div>
                   <div class="catalog-item oil-season">
                      <div class="catalog-item__img">
-                        <img src="./img/oil/1.png" alt="">
+                        <picture><source srcset="./img/oil/1.webp" type="image/webp"><img src="./img/oil/1.png" alt=""></picture>
                      </div>
                      <div class="catalog-item__text">
                         <div class="catalog-item__title">ASURA 5W-30 GF-5</div>
@@ -185,7 +218,50 @@
          </div>
       </div>
 
-      @@include('./scss/templates/footer/_footer.html')
+      <footer>
+   <div class="container">
+      <div class="footer">
+         <div class="footer-logo">
+            <picture><source srcset="./img/logo.webp" type="image/webp"><img src="./img/logo.png" alt=""></picture>
+         </div>
+         <div class="footer-nav">
+            <div class="footer-nav__item">
+               <p class="footer-nav-title">О нашей компании</p>
+               <ul>
+                  <li>
+                     <a href="#">О компании</a>
+                  </li>
+                  <li>
+                     <a href="#">Каталог</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer-nav__item">
+               <p class="footer-nav-title">Информация покупателям</p>
+               <ul>
+                  <li>
+                     <a href="#">Оплата и доставка</a>
+                  </li>
+                  <li>
+                     <a href="#">Контакты</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer-nav__item">
+               <p class="footer-nav-title">Наш сайт</p>
+               <ul>
+                  <li>
+                     <a href="#">Главная</a>
+                  </li>
+                  <li>
+                     <a href="#">8(999)-111-22-33</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
 
    </div>
 
